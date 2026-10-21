@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Pengaturan dasar halaman website -->
+    <meta charset="UTF-8">
+
+    <!-- Agar tampilan menyesuaikan ukuran layar HP dan komputer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Deskripsi website untuk mesin pencari -->
+    <meta
+        name="description"
+        content="MenuKita adalah menu digital yang memudahkan pelanggan melihat menu makanan dan minuman kafe."
+    >
+
+    <!-- Judul yang muncul pada tab browser -->
+    <title>MenuKita | Menu Digital Kafe</title>
+
+    <!-- Menghubungkan file CSS untuk mengatur tampilan website -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- BAGIAN 1: HEADER / NAVIGASI   -->
+    <!-- ============================= -->
+
+    <header class="header">
+        <div class="container header-content">
+
+            <!-- Nama atau logo website -->
+            <a href="#beranda" class="logo" aria-label="MenuKita, beranda">
+                Menu<span>Kita</span>
+            </a>
+
+            <!-- Navigasi menuju bagian-bagian halaman -->
+            <nav aria-label="Navigasi utama">
+                <ul class="nav-list">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ============================= -->
+        <!-- BAGIAN 2: HERO / BERANDA      -->
+        <!-- ============================= -->
+
+        <section id="beranda" class="hero">
+            <div class="container hero-content">
+
+                <!-- Label kecil di atas judul utama -->
+                <p class="hero-label">MENU DIGITAL KAFE</p>
+
+                <!-- Judul utama website -->
+                <h1>Temukan Menu Favoritmu</h1>
+
+                <!-- Penjelasan singkat website -->
+                <p class="hero-description">
+                    Jelajahi pilihan makanan dan minuman dengan mudah.
+                    Temukan menu favoritmu tanpa harus menunggu buku menu.
+                </p>
+
+                <!-- Tombol untuk menuju daftar menu -->
+                <a href="#menu" class="button button-primary">
+                    Lihat Menu
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- BAGIAN 3: DAFTAR MENU         -->
+        <!-- ============================= -->
+
+        <section id="menu" class="menu-section">
+            <div class="container">
+
+                <!-- Judul dan deskripsi bagian menu -->
+                <div class="section-heading">
+                    <p class="section-label">PILIHAN KAMI</p>
+                    <h2>Daftar Menu</h2>
+                    <p>
+                        Cari makanan atau minuman yang kamu inginkan.
+                    </p>
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- BAGIAN 4: PENCARIAN MENU      -->
+                <!-- ============================= -->
+
+                <div class="menu-controls">
+
+                    <!-- Label membantu pengguna memahami kolom pencarian -->
+                    <label for="search-input" class="visually-hidden">
+                        Cari menu berdasarkan nama
+                    </label>
+
+                    <!--
+                        JavaScript akan membaca teks dari kolom ini
+                        untuk mencari nama makanan atau minuman.
+                    -->
+                    <input
+                        type="search"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="Cari makanan atau minuman..."
+                        autocomplete="off"
+                    >
+
+                    <!--
+                        Tombol kategori digunakan untuk memfilter menu.
+                        Nilai data-category akan dibaca oleh JavaScript.
+                    -->
+                    <div
+                        class="category-list"
+                        role="group"
+                        aria-label="Filter kategori menu"
+                    >
+                        <button
+                            type="button"
+                            class="category-button active"
+                            data-category="semua"
+                            aria-pressed="true"
+                        >
+                            Semua
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-category="makanan"
+                            aria-pressed="false"
+                        >
+                            Makanan
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-category="minuman"
+                            aria-pressed="false"
+                        >
+                            Minuman
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-category="camilan"
+                            aria-pressed="false"
+                        >
+                            Camilan
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- BAGIAN 5: KARTU PRODUK        -->
+                <!-- ============================= -->
+
+                <!--
+                    JavaScript akan memasukkan kartu menu
+                    ke dalam elemen dengan id="menu-list".
+
+                    Data produk dapat dikelola di file script.js.
+                -->
+                <div
+                    id="menu-list"
+                    class="menu-grid"
+                    aria-label="Daftar makanan dan minuman"
+                    aria-live="polite"
+                >
+                    <!-- Kartu menu ditampilkan oleh JavaScript -->
+                </div>
+
+
+                <!--
+                    Pesan ini ditampilkan jika tidak ada menu
+                    yang cocok dengan pencarian atau kategori.
+                -->
+                <p id="empty-message" class="empty-message" hidden>
+                    Menu tidak ditemukan. Coba kata kunci lain.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- BAGIAN 6: TENTANG MENUKITA    -->
+        <!-- ============================= -->
+
+        <section id="tentang" class="about-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">TENTANG KAMI</p>
+                    <h2>Menu Digital yang Lebih Praktis</h2>
+                </div>
+
+                <p class="about-description">
+                    MenuKita adalah proyek sosial berbasis teknologi
+                    yang membantu kafe dan restoran memperkenalkan
+                    menu mereka secara digital. Pelanggan dapat
+                    melihat informasi menu melalui perangkat yang
+                    terhubung ke internet, sedangkan pemilik usaha
+                    dapat memperbarui informasi menu melalui pengelola
+                    website.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- BAGIAN 7: FOOTER              -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <!-- Tahun akan diperbarui secara otomatis oleh JavaScript -->
+            <p>
+                &copy; <span id="current-year">2026</span> MenuKita.
+                Dibuat untuk mendukung UMKM kuliner.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- BAGIAN 8: FILE JAVASCRIPT     -->
+    <!-- ============================= -->
+
+    <!--
+        File JavaScript diletakkan di akhir body agar elemen HTML
+        sudah tersedia saat JavaScript mulai dijalankan.
+    -->
+    <script src="script.js"></script>
+
+</body>
+</html>
